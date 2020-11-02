@@ -1,6 +1,7 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
-// Captalises the first letter of every word of the sentence passed to the capitalise(String sentenceToCapitalise) 
+// Captalises the first letter of every word of the sentence passed to the 'capitalise(String sentenceToCapitalise)' 
 // method
 
 public class FirstLetterCapitalisation {
@@ -42,7 +43,13 @@ public class FirstLetterCapitalisation {
 	}
 
 	public static void main(String[] args) {
-		capitalise("this is the sentence to capitalise.");
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("FIRST WORD CAPITALISER");
+		System.out.println("----------------------");
+		System.out.println("\nCapitalises the first letter of every word of your sentence.\n");
+		System.out.println("Enter a sentence: ");
+		String sentenceToCapitalise = scanner.nextLine();
+		capitalise(sentenceToCapitalise);
 	}
 
 }
