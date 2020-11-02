@@ -30,7 +30,7 @@ public class FirstLetterCapitalisation {
 			// First letter converted to a string and capitalised
 			String firstLetterUpperCase = Character.toString(firstLetter.get(0)).toUpperCase();
 			String reassembledWord = firstLetterUpperCase + wordExceptFirstLetter; // Reassembling word
-			transformedWords[count] = reassembledWord; // Puts capitalised word into array.
+			transformedWords[count] = reassembledWord; // Puts capitalised word into array of words.
 			count++;
 		}
 		// Reinsert spaces between words.
