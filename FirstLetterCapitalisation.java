@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 // Captalises the first letter of every word of the sentence passed to the 'capitalise(String sentenceToCapitalise)' 
@@ -17,21 +16,9 @@ public class FirstLetterCapitalisation {
 		// one containing the rest of the word.
 		int count = 0;
 		for (String word : separated) {
-			ArrayList<Character> firstLetter = new ArrayList<>();
-			firstLetter.add(word.charAt(0));
-			ArrayList<Character> remainingLetters = new ArrayList<>();
-			for (int i = 1; i < word.length(); i++) {
-				remainingLetters.add(word.charAt(i));
-			}
-			// Create a string containing all letters except the first.
-			String wordExceptFirstLetter = "";
-			for (Character letter : remainingLetters) {
-				wordExceptFirstLetter += Character.toString(letter);
-			}
-			// First letter converted to a string and capitalised
-			String firstLetterUpperCase = Character.toString(firstLetter.get(0)).toUpperCase();
-			String reassembledWord = firstLetterUpperCase + wordExceptFirstLetter; // Reassembling word
-			transformedWords[count] = reassembledWord; // Puts capitalised word into array of words.
+			String firstLetterCapitalised = word.substring(0, 1).toUpperCase();
+			String remainingLetters = word.substring(1, word.length());
+			transformedWords[count] = firstLetterCapitalised + remainingLetters;
 			count++;
 		}
 		// Reinsert spaces between words.
@@ -50,6 +37,7 @@ public class FirstLetterCapitalisation {
 		System.out.println("Enter a sentence: ");
 		String sentenceToCapitalise = scanner.nextLine();
 		capitalise(sentenceToCapitalise);
+		scanner.close();
 	}
 
 }
