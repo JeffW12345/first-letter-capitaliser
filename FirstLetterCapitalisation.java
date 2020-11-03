@@ -1,7 +1,6 @@
-import java.util.Scanner;
+// Captalises the first letter of every word of the sentence entered by the user.
 
-// Captalises the first letter of every word of the sentence passed to the 'capitalise(String sentenceToCapitalise)' 
-// method
+import java.util.Scanner;
 
 public class FirstLetterCapitalisation {
 
@@ -11,9 +10,12 @@ public class FirstLetterCapitalisation {
 		String[] separated = sentenceToCapitalise.split(" ");
 		int numberOfWords = separated.length;
 		String[] transformedWords = new String[numberOfWords]; // Array of capitalised words.
-		// Loops through the words.
-		// For each word, creates an ArrayList of Characters containing first letter and
-		// one containing the rest of the word.
+		/*
+		 * Loops through the words. Creates two strings - one containing the first
+		 * letter (capitalised) and one containing the remaining letters. Then combines
+		 * them and puts the new string consisting of the capitalised word into the
+		 * transformedWords array.
+		 */
 		int count = 0;
 		for (String word : separated) {
 			String firstLetterCapitalised = word.substring(0, 1).toUpperCase();
@@ -21,7 +23,7 @@ public class FirstLetterCapitalisation {
 			transformedWords[count] = firstLetterCapitalised + remainingLetters;
 			count++;
 		}
-		// Reinsert spaces between words.
+		// Reconstructs the sentence with purely capitalised words.
 		String finalSentence = "";
 		for (String word : transformedWords) {
 			finalSentence += word + " ";
