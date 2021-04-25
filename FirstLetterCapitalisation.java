@@ -5,29 +5,22 @@ import java.util.Scanner;
 public class FirstLetterCapitalisation {
 
 	private static void capitalise(String sentenceToCapitalise) {
-		// Create array of words.
 		System.out.println("Sentence before : " + sentenceToCapitalise);
 		String[] separated = sentenceToCapitalise.split(" ");
-		int numberOfWords = separated.length;
-		String[] transformedWords = new String[numberOfWords]; // Array of capitalised words.
-		/*
-		 * Loops through the words. Creates two strings - one containing the first
-		 * letter (capitalised) and one containing the remaining letters. Then combines
-		 * them and puts the new string consisting of the capitalised word into the
-		 * transformedWords array.
-		 */
-		int count = 0;
+		String finalSentence = "";
+
 		for (String word : separated) {
+			// When there is more than once space before or after a word, each space is rendered into an array entry of 0 length by split( ).
+			// Code below preserves extra spaces from the original sentence in the modified sentence.
+			if (word.length() == 0) {
+				finalSentence += " ";  
+				continue;
+			}
 			String firstLetterCapitalised = word.substring(0, 1).toUpperCase();
 			String remainingLetters = word.substring(1, word.length());
-			transformedWords[count] = firstLetterCapitalised + remainingLetters;
-			count++;
+			finalSentence += firstLetterCapitalised + remainingLetters + " ";
 		}
-		// Reconstructs the sentence with purely capitalised words.
-		String finalSentence = "";
-		for (String word : transformedWords) {
-			finalSentence += word + " ";
-		}
+
 		System.out.println("Sentence after : " + finalSentence);
 	}
 
@@ -41,5 +34,4 @@ public class FirstLetterCapitalisation {
 		capitalise(sentenceToCapitalise);
 		scanner.close();
 	}
-
 }
