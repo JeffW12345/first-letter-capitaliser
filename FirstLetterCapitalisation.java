@@ -10,8 +10,9 @@ public class FirstLetterCapitalisation {
 		String finalSentence = "";
 
 		for (String word : separated) {
-			// When there is more than once space before or after a word, each space is rendered into an array entry of 0 length by split( ).
-			// Code below preserves extra spaces from the original sentence in the modified sentence.
+			/* The 'if' condition below is because, if there is more than 1 space between two words, the second to nth spaces are rendered into 
+			 * array entries of length zero by the split method
+			 */
 			if (word.length() == 0) {
 				finalSentence += " ";  
 				continue;
